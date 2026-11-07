@@ -41,14 +41,16 @@ conda install -c conda-forge rdkit=2024.03.5
 pip install -r requirements.txt
 ```
 
-The agent uses Llama 3 8B served locally through [Ollama](https://ollama.com); no cloud LLM service is required.
+### Local LLM (Ollama)
+
+The agent requires [Ollama](https://ollama.com) to serve Llama 3 8B locally; no cloud LLM service is required. Install Ollama, then download the model:
 
 ```bash
-ollama pull llama3
-ollama serve        # if the Ollama service is not already running
+ollama pull llama3          # about 4.7 GB
+ollama serve                # if the Ollama service is not already running
 ```
 
-All LLM calls use `temperature = 0.0`. PubChem access requires an internet connection.
+The agent connects to `http://localhost:11434` and uses the model `llama3`, as set by `OLLAMA_URL` and `OLLAMA_MODEL_NAME` in `agent/chemintel_agent.py`. All LLM calls use `temperature = 0.0`. PubChem access requires an internet connection.
 
 ---
 
