@@ -1,0 +1,17 @@
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environment and secrets
+.env
+.venv/
+venv/
+
+# Full Keras model files produced by retraining (weights + preprocessors are kept)
+*.keras
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
